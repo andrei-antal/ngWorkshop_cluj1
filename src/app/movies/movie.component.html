@@ -20,8 +20,8 @@
       </div>
       <br />
       <p [style.fontWeight]="'bold'">Comments:</p>
-      <p [hidden]="!isSaved">{{comment}}</p>
-      <div [hidden]="isSaved">
+      <p *ngIf="isSaved">{{comment}}</p>
+      <div *ngIf="!isSaved">
         <textarea [(ngModel)]="comment"></textarea>
         <p>{{getWords()}} words</p>
         <br />
