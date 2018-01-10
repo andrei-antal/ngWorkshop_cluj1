@@ -2,17 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'movie-component',
-  template: `
-    <div>
-      <div>{{title}}</div>
-      <div>{{year}}</div>
-      <div>{{duration}}</div>
-      <div>{{genre}}</div>
-      <div>{{plot}}</div>
-      <img [src]="poster">
-      <button (click)="like()">LIKE</button>
-    </div>
-  `
+  templateUrl: './movie.component.html',
+  styleUrls: ['./movie.component.css']
 })
 export class MovieComponent {
   public title = 'Star Wars: The Last Jedi';

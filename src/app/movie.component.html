@@ -1,0 +1,20 @@
+<div class="movie card">
+  <div class="card-content row">
+    <div class="col s4">
+      <img [src]="poster">
+    </div>
+    <div class="col s8">
+      <div class="title">
+        {{title}}
+        <span>({{year}})</span>
+      </div>
+      <div class="details">
+        {{duration}} | {{genre}}
+      </div>
+      <hr>
+      <div class="plot">
+        {{plot}}
+      </div>
+    </div>
+  </div>
+</div>

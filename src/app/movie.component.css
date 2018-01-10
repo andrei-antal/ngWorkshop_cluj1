@@ -1,0 +1,25 @@
+.movie {
+  width: 550px;
+  min-height: 300px;
+}
+
+img {
+  width:100%;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.title span{
+  font-size: 14px;
+}
+
+.details {
+  font-size: 12px;
+}
+
+.plot {
+  margin-top: 20px;
+  font-size: 13px;
+}
