@@ -13,7 +13,9 @@ export class MovieComponent {
   public plot = 'Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.';
   public poster = 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg';
 
+  public isLiked = false;
+
   like() {
-    console.log('Liked');
+    this.isLiked = !this.isLiked;
   }
 }
