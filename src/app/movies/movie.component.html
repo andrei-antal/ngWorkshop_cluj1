@@ -1,32 +1,32 @@
-<div class="movie card">
+<div class="movie card" *ngFor="let movie of movies;  let index=index">
   <div class="card-content row">
     <div class="col s4">
-      <img [src]="poster">
-      <button (click)="like()" class="btn" [style.backgroundColor]="isLiked ? '#26a69a' : '#2196f3'">
-        {{isLiked ? 'Liked' : 'Like'}}
+      <img [src]="movie.poster">
+      <button (click)="like(index)" class="btn" [style.backgroundColor]="movie.isLiked ? '#26a69a' : '#2196f3'">
+        {{movie.isLiked ? 'Liked' : 'Like'}}
       </button>
     </div>
     <div class="col s8">
       <div class="title">
-        {{title}}
-        <span>({{year}})</span>
+        {{movie.title}}
+        <span>({{movie.year}})</span>
       </div>
       <div class="details">
-        {{duration}} | {{genre}}
+        {{movie.duration}} | {{movie.genre}}
       </div>
       <hr>
       <div class="plot">
-        {{plot}}
+        {{movie.plot}}
       </div>
       <br />
       <p [style.fontWeight]="'bold'">Comments:</p>
-      <p *ngIf="isSaved">{{comment}}</p>
-      <div *ngIf="!isSaved">
-        <textarea [(ngModel)]="comment"></textarea>
-        <p>{{getWords()}} words</p>
+      <p *ngIf="movie.commentSaved">{{movie.comment}}</p>
+      <div *ngIf="!movie.commentSaved">
+        <textarea [(ngModel)]="movie.comment"></textarea>
+        <p>{{getWords(movie.comment)}} words</p>
         <br />
-        <button (click)="clear()" class="btn" [disabled]="comment.length <= 0">Clear</button>
-        <button (click)="save()" class="btn" [disabled]="comment.length <= 0">Save</button>
+        <button (click)="clear(index)" class="btn" [disabled]="movie.comment.length <= 0">Clear</button>
+        <button (click)="save(index)" class="btn" [disabled]="movie.comment.length <= 0">Save</button>
       </div>
     </div>
   </div>
