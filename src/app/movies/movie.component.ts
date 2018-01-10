@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'movie-component',
@@ -17,20 +17,21 @@ export class MovieComponent {
   @Input() commentSaved;
   @Input() comment;
 
-  like(index) {
-    // this.movies[index].isLiked = !this.movies[index].isLiked;
+  @Input() index;
+
+  @Output() saveComment = new EventEmitter();
+  @Output() likeMovie = new EventEmitter();
+
+  like() {
+    this.likeMovie.emit(this.index);
   }
 
-  clear(index) {
-    // this.movies[index].comment = '';
-  }
-
-  save(index) {
-    // this.movies[index].commentSaved = true;
+  save() {
+    this.saveComment.emit(this.index);
   }
 
   getWords(newComment) {
-    if (newComment === '') {
+    if (newComment.trim() === '') {
       return 0;
     }
     return newComment.trim().split(' ').length;

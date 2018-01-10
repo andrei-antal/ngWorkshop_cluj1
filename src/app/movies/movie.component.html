@@ -2,7 +2,7 @@
   <div class="card-content row">
     <div class="col s4">
       <img [src]="poster">
-      <button (click)="like(index)" class="btn" [style.backgroundColor]="isLiked ? '#26a69a' : '#2196f3'">
+      <button (click)="like()" class="btn" [style.backgroundColor]="isLiked ? '#26a69a' : '#2196f3'">
         {{isLiked ? 'Liked' : 'Like'}}
       </button>
     </div>
@@ -25,8 +25,7 @@
         <textarea [(ngModel)]="comment"></textarea>
         <p>{{getWords(comment)}} words</p>
         <br />
-        <button (click)="clear(index)" class="btn" [disabled]="comment.length <= 0">Clear</button>
-        <button (click)="save(index)" class="btn" [disabled]="comment.length <= 0">Save</button>
+        <button (click)="save()" class="btn" [disabled]="comment.length <= 0">Save</button>
       </div>
     </div>
   </div>

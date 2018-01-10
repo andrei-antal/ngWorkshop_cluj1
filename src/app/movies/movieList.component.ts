@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="movie-list">
       <movie-component
-        *ngFor="let movie of movies"
+        *ngFor="let movie of movies; let index=index"
         [title]="movie.title"
         [year]="movie.year"
         [duration]="movie.duration"
@@ -15,6 +15,10 @@ import { Component } from '@angular/core';
         [isLiked]="movie.isLiked"
         [commentSaved]="movie.commentSaved"
         [comment]="movie.comment"
+        [index]="index"
+        (saveComment)="handleSaveComment($event)"
+        (likeMovie)="handleLikeMovie($event)"
+        (clearComment)="handleClearComment($event)"
       ></movie-component>
     </div>
   `
@@ -66,4 +70,16 @@ export class MovieListComponent {
       comment: '',
     }
   ];
+
+  handleSaveComment(index) {
+    this.movies[index].commentSaved = true;
+  }
+
+  handleClearComment(index) {
+    this.movies[index].comment = '';
+  }
+
+  handleLikeMovie(index) {
+    this.movies[index].isLiked = !this.movies[index].isLiked;
+  }
 }
