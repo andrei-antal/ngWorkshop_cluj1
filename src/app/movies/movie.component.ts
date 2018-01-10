@@ -7,19 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MovieComponent {
 
-  @Input() title;
-  @Input() year;
-  @Input() duration;
-  @Input() genre;
-  @Input() plot;
-  @Input() poster;
-  @Input() isLiked;
-  @Input() commentSaved;
-  @Input() comment;
+  @Input() movie;
   @Input() index;
 
   @Output() saveComment = new EventEmitter();
   @Output() likeMovie = new EventEmitter();
+  @Output() deleteMovie = new EventEmitter();
 
   @Input() get rating() {
     return this.movieRating;
@@ -37,6 +30,10 @@ export class MovieComponent {
 
   save() {
     this.saveComment.emit(this.index);
+  }
+
+  delete() {
+    this.deleteMovie.emit(this.index);
   }
 
   getWords(newComment) {

@@ -6,10 +6,12 @@ import { MovieListComponent } from './movieList.component';
 import { MovieComponent } from './movie.component';
 import { RatingComponent } from './rating.component';
 
+import { MoviesService } from './movies.service';
+
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
   exports: [ MovieListComponent ],
   declarations: [ MovieComponent, MovieListComponent, RatingComponent ],
-  providers: [],
+  providers: [ MoviesService ],
 })
 export class MoviesModule { }
