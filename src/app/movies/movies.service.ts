@@ -65,4 +65,11 @@ export class MoviesService {
     ];
   }
 
+  filterMovies(filterTerm) {
+    if (!filterTerm || filterTerm === '') {
+      return this.getMovies();
+    }
+    return this.movies.filter(movie => movie.title.toLowerCase().includes(filterTerm.toLowerCase()));
+  }
+
 }
