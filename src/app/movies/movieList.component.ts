@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
         [isLiked]="movie.isLiked"
         [commentSaved]="movie.commentSaved"
         [comment]="movie.comment"
-        [rating]="movie.rating"
+        [(rating)]="movie.rating"
         [index]="index"
         (saveComment)="handleSaveComment($event)"
         (likeMovie)="handleLikeMovie($event)"

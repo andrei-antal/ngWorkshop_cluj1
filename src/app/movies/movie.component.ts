@@ -17,10 +17,19 @@ export class MovieComponent {
   @Input() commentSaved;
   @Input() comment;
   @Input() index;
-  @Input() rating;
 
   @Output() saveComment = new EventEmitter();
   @Output() likeMovie = new EventEmitter();
+
+  @Input() get rating() {
+    return this.movieRating;
+  }
+  set rating(val) {
+    this.movieRating = val;
+  }
+  @Output() ratingChange = new EventEmitter();
+
+  public movieRating;
 
   like() {
     this.likeMovie.emit(this.index);
@@ -38,6 +47,7 @@ export class MovieComponent {
   }
 
   handleRatingChange(newRating) {
-    this.rating = newRating;
+    this.movieRating = newRating;
+    this.ratingChange.emit(newRating);
   }
 }

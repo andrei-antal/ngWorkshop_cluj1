@@ -7,8 +7,8 @@
       </button>
       <rating-component
         *ngIf="isLiked"
-        [rating]="rating"
-        (changeRating)="handleRatingChange($event)"
+        [rating]="movieRating"
+        (ratingChange)="handleRatingChange($event)"
       ></rating-component>
     </div>
     <div class="col s8">

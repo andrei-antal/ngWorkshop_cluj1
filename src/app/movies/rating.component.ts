@@ -20,10 +20,10 @@ export class RatingComponent implements OnInit, OnChanges {
   private ratings = [ false, false, false, false, false ];
 
   @Input() rating;
-  @Output() changeRating = new EventEmitter();
+  @Output() ratingChange = new EventEmitter();
 
   handleClick(index) {
-    this.changeRating.emit(index + 1);
+    this.ratingChange.emit(index + 1);
   }
 
   ngOnInit() {
