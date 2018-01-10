@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       <div>{{genre}}</div>
       <div>{{plot}}</div>
       <img [src]="poster">
+      <button (click)="like()">LIKE</button>
     </div>
   `
 })
@@ -20,4 +21,8 @@ export class MovieComponent {
   public genre = 'Action, Adventure, Fantasy';
   public plot = 'Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.';
   public poster = 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg';
+
+  like() {
+    console.log('Liked');
+  }
 }
