@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class MoviesService {
   private movies = [
     new Movie(
-      'Star Wars:The Last Jedi',
+      'Star Wars: The Last Jedi',
       2017,
       '152 min',
       'Action, Adventure, Fantasy',
