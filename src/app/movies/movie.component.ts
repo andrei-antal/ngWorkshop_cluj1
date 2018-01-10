@@ -14,8 +14,25 @@ export class MovieComponent {
   public poster = 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg';
 
   public isLiked = false;
+  public isSaved = false;
+  public comment = '';
 
   like() {
     this.isLiked = !this.isLiked;
+  }
+
+  clear() {
+    this.comment = '';
+  }
+
+  save() {
+    this.isSaved = true;
+  }
+
+  getWords() {
+    if (this.comment === '') {
+      return 0;
+    }
+    return this.comment.trim().split(' ').length;
   }
 }

@@ -18,6 +18,16 @@
       <div class="plot">
         {{plot}}
       </div>
+      <br />
+      <p [style.fontWeight]="'bold'">Comments:</p>
+      <p [hidden]="!isSaved">{{comment}}</p>
+      <div [hidden]="isSaved">
+        <textarea [(ngModel)]="comment"></textarea>
+        <p>{{getWords()}} words</p>
+        <br />
+        <button (click)="clear()" class="btn" [disabled]="comment.length <= 0">Clear</button>
+        <button (click)="save()" class="btn" [disabled]="comment.length <= 0">Save</button>
+      </div>
     </div>
   </div>
 </div>
