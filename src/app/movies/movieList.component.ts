@@ -15,10 +15,10 @@ import { Component } from '@angular/core';
         [isLiked]="movie.isLiked"
         [commentSaved]="movie.commentSaved"
         [comment]="movie.comment"
+        [rating]="movie.rating"
         [index]="index"
         (saveComment)="handleSaveComment($event)"
         (likeMovie)="handleLikeMovie($event)"
-        (clearComment)="handleClearComment($event)"
       ></movie-component>
     </div>
   `
@@ -35,6 +35,7 @@ export class MovieListComponent {
       isLiked: false,
       commentSaved: false,
       comment: '',
+      rating: 1,
     },
     {
       title: 'Black Swan',
@@ -46,6 +47,7 @@ export class MovieListComponent {
       isLiked: false,
       commentSaved: false,
       comment: '',
+      rating: 1,
     },
     {
       title: 'Fight Club',
@@ -57,6 +59,7 @@ export class MovieListComponent {
       isLiked: false,
       commentSaved: false,
       comment: '',
+      rating: 1,
     },
     {
       title: 'The Godfather: Part II',
@@ -68,6 +71,7 @@ export class MovieListComponent {
       isLiked: false,
       commentSaved: false,
       comment: '',
+      rating: 1,
     }
   ];
 

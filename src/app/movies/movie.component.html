@@ -2,9 +2,14 @@
   <div class="card-content row">
     <div class="col s4">
       <img [src]="poster">
-      <button (click)="like()" class="btn" [style.backgroundColor]="isLiked ? '#26a69a' : '#2196f3'">
+      <button *ngIf="!isLiked" (click)="like()" class="btn" [style.backgroundColor]="isLiked ? '#26a69a' : '#2196f3'">
         {{isLiked ? 'Liked' : 'Like'}}
       </button>
+      <rating-component
+        *ngIf="isLiked"
+        [rating]="rating"
+        (changeRating)="handleRatingChange($event)"
+      ></rating-component>
     </div>
     <div class="col s8">
       <div class="title">

@@ -16,8 +16,8 @@ export class MovieComponent {
   @Input() isLiked;
   @Input() commentSaved;
   @Input() comment;
-
   @Input() index;
+  @Input() rating;
 
   @Output() saveComment = new EventEmitter();
   @Output() likeMovie = new EventEmitter();
@@ -35,5 +35,9 @@ export class MovieComponent {
       return 0;
     }
     return newComment.trim().split(' ').length;
+  }
+
+  handleRatingChange(newRating) {
+    this.rating = newRating;
   }
 }
