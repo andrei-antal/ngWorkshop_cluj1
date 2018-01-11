@@ -7,11 +7,11 @@ import { MoviesModule } from './movies/movies.module';
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './pages/Details.component';
 import { HomeComponent } from './pages/Home.component';
+import { DetailsModule } from './details/details.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsComponent,
     HomeComponent,
   ],
   imports: [
@@ -24,11 +24,7 @@ import { HomeComponent } from './pages/Home.component';
       },
       {
         path: 'movie',
-        component: DetailsComponent,
-      },
-      {
-        path: 'movie/:id',
-        component: DetailsComponent,
+        loadChildren: 'app/details/details.module#DetailsModule',
       },
       {
         path: '**',
