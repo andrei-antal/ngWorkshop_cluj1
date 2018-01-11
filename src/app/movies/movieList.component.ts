@@ -18,6 +18,7 @@ import 'rxjs/add/operator/debounce';
           <input placeholder="Search" id="search_movie" #filter>
         </div>
       </div>
+      <a routerLink="/movie">Add new</a>
       <div *ngIf="movies.length>0">
         <movie-component
           *ngFor="let movie of movies; let index=index"
