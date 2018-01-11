@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'movie-component',
@@ -6,6 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent {
+
+  constructor(private router: Router) {}
 
   @Input() movie;
   @Input() index;
@@ -34,6 +37,10 @@ export class MovieComponent {
 
   delete() {
     this.deleteMovie.emit(this.index);
+  }
+
+  edit() {
+    this.router.navigate(['/movie', this.index]);
   }
 
   getWords(newComment) {
